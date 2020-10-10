@@ -79,7 +79,8 @@ export default class MenuBuilder {
           label: 'Quit',
           accelerator: 'Command+Q',
           click: () => {
-            app.quit();
+            // app.quit();
+            console.log(app);
           },
         },
       ],

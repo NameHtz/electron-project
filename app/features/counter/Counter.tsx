@@ -1,8 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {
+  app,
+  Menu,
+  shell,
+  BrowserWindow,
+} from 'electron';
+import { Button } from 'antd';
 import styles from './Counter.css';
 import routes from '../../constants/routes.json';
+
 import {
   increment,
   decrement,
@@ -10,6 +18,10 @@ import {
   incrementAsync,
   selectCount,
 } from './counterSlice';
+
+function showApp() {
+  console.log(app, Menu, shell, BrowserWindow);
+}
 
 export default function Counter() {
   const dispatch = useDispatch();
@@ -65,6 +77,15 @@ export default function Counter() {
         >
           async
         </button>
+        <Button
+          type="dashed"
+          data-tclass="btn"
+          onClick={() => {
+            showApp()
+          }}
+        >
+          click
+        </Button>
       </div>
     </div>
   );
